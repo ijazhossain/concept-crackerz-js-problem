@@ -25,21 +25,22 @@ Output:
 */
 const deleteProperty = (arr) => {
     const objectKey = Object.keys(arr[0]);
-    console.log(objectKey);
+    console.log(objectKey[0]);
     const stringProp = arr[1];
     if (objectKey[0] == stringProp) {
-        delete arr[0].objectKey;
+        delete arr[0][objectKey[0]];
         console.log(arr);
         return 'YES';
 
     } else {
+        console.log(arr);
         return 'NO';
     }
 }
 var result = deleteProperty([
     {
-        fname: 'John',
-    }, 'fname'
+        lastName: 'Mithila',
+    }, 'lastName'
 ]
 )
 console.log(result);
